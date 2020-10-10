@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Custom Javasript</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="nav" class="nav">
+        <button id="nav-script-list" class="btn">
+          Script List
+        </button>
+        <button id="nav-create" class="btn">
+          Create
+        </button>
+      </div>
+
+      <div id="screen" class="content">
+        <div id="screen-script-list" class="active">
+          <div id="screen-script-list-index"></div>
+          <div id="screen-script-list-actions">
+            <button class="btn" id="screen-script-list-run">
+              Run
+            </button>
+            <button class="btn" id="screen-script-list-show">
+              Show
+            </button>
+            <button class="btn" id="screen-script-list-delete">
+              Delete
+            </button>
+          </div>
+        </div>
+
+        <div id="screen-new-script">
+          <input type="hidden" name="id" id="screen-new-script-id" />
+          <p>Name:</p>
+          <input type="text" name="name" id="screen-new-script-name" />
+          <p>Script:</p>
+          <textarea name="script" id="screen-new-script-js" class="mb-10"></textarea>
+          <div id="screen-new-script-role">
+            <input type="radio" name="role" value="only" checked> Match with current host<br/>
+            <input type="radio" name="role" value="all"> All sites
+          </div>
+          <button id="screen-new-script-submit" class="btn">
+            Save
+          </button>
+        </div>  
+      </div>
+    </div>
+    <script src="lib.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
