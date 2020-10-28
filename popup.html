@@ -1,52 +1,83 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Custom Javasript</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-  </head>
-  <body>
-    <div id="main">
-      <div id="nav" class="nav">
-        <button id="nav-script-list" class="btn">
-          Script List
-        </button>
-        <button id="nav-create" class="btn">
-          Create
-        </button>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Javasript</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
 
-      <div id="screen" class="content">
-        <div id="screen-script-list" class="active">
-          <div id="screen-script-list-index"></div>
-          <div id="screen-script-list-actions">
-            <button class="btn" id="screen-script-list-run">
-              Run
-            </button>
-            <button class="btn" id="screen-script-list-show">
-              Show
-            </button>
-            <button class="btn" id="screen-script-list-delete">
-              Delete
-            </button>
-          </div>
+<body>
+  <div id="main">
+    <div id="screens">
+      <div id="screen-1" class="active">
+        <div class="actions">
+          <button id="screen-1-them-moi" class="button is-primary"><strong>Thêm mới</strong></button>
         </div>
-
-        <div id="screen-new-script">
-          <input type="hidden" name="id" id="screen-new-script-id" />
-          <p>Name:</p>
-          <input type="text" name="name" id="screen-new-script-name" />
-          <p>Script:</p>
-          <textarea name="script" id="screen-new-script-js" class="mb-10"></textarea>
-          <div id="screen-new-script-role">
-            <input type="radio" name="role" value="only" checked> Match with current host<br/>
-            <input type="radio" name="role" value="all"> All sites
+        <aside id="screen-1-menu" class="menu">
+        </aside>
+      </div>
+      <div id="screen-2">
+        <aside class="form">
+          <input type="hidden" id="screen-2-id">
+          <div class="field">
+            <label class="label">Tên</label>
+            <div class="control">
+              <input id="screen-2-name" class="input" type="text" placeholder="Script...">
+            </div>
           </div>
-          <button id="screen-new-script-submit" class="btn">
-            Save
-          </button>
-        </div>  
+
+          <div class="field">
+            <label class="label">Mã</label>
+            <div class="control">
+              <textarea id="screen-2-script" class="textarea" placeholder="// Coppy đoạn mã của bạn vào đây..."></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">
+              Phạm vi
+            </label>
+            <div class="control">
+              <label class="radio">
+                <input id="screen-2-domain" type="radio" name="scope" value="Others" checked>
+                Domain
+              </label>
+              <br />
+              <label class="radio">
+                <input id="screen-2-all" type="radio" value="all" name="scope">
+                Tất Cả
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Tuỳ chỉnh</label>
+            <div class="control">
+              <label class="checkbox">
+                <input type="checkbox" id="screen-2-run-when-load-page">
+                Chạy khi tải trang
+              </label>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="screen-2-luu" class="button is-link">
+                <strong>Lưu</strong>
+              </button>
+            </div>
+            <div class="control">
+              <button id="screen-2-huy" class="button is-link is-light"><strong>Huỷ</strong></button>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-    <script src="lib.js"></script>
-    <script src="popup.js"></script>
-  </body>
+  </div>
+
+  <script src="lowline.js"></script>
+  <script src="popup.js"></script>
+</body>
+
 </html>
